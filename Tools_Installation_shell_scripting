@@ -1,0 +1,105 @@
+Java Installation
+--------------------------
+sudo apt update -y
+sudo apt install openjdk-8-jdk -y
+
+
+Jenkins Installation
+----------------------------
+
+
+sudo apt update -y
+sudo apt install wget -y
+cd /opt
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+
+Jira
+----------------------------------
+https://www.atlassian.com/software/jira/download
+
+cd /opt  wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.12.3-x64.bin
+chmod +x atlassian-jira-software-7.12.3-x64.bin
+./atlassian-jira-software-7.12.3-x64.bin
+#configure the jira	
+
+
+Ansible Installation
+-------------------------------
+deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+sudo apt update
+sudo apt install ansible
+
+apt update -y
+apt-get install -y sshpass
+
+
+
+Maven
+----------------
+
+sudo apt update -y
+sudo apt install openjdk-8-jdk -y
+sudo apt install maven
+
+(or )
+
+sudo apt update -y
+sudo apt install openjdk-8-jdk -y
+sudo su -
+cd /opt/
+wget https://apachemirror.wuchna.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip
+vi /etc/profile
+	export M2_HOME=/opt/apache-maven-3.6.2
+	export PATH = $PATH:$M2_HOME/bin
+
+source /etc/profile
+
+
+Nexus
+-----------
+
+#!/bin/bash
+sudo su -
+apt update -y
+apt install tar wget -y
+apt install openjdk-8-jdk -y
+cd /opt
+apt install tar wget -y
+wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz
+tar -zxvf nexus-3.15.2-01-unix.tar.gz
+mv /opt/nexus-3.15.2-01 /opt/nexus
+ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+sudo systemctl enable nexus
+sudo systemctl start nexus
+
+Sonarqube
+----------------
+
+#!/bin/bash
+sudo su -
+apt update -y
+apt install unzip -y
+apt install openjdk-8-jdk -y
+cd /opt
+apt install wget unzip -y
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
+unzip sonarqube-7.8.zip
+cd /opt/sonarqube-7.8/bin/linux-x86-64/
+sh sonar.sh start
+
+
+
+====================================
+
+/usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+
