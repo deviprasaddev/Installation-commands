@@ -1,0 +1,7 @@
+ubuntu:
+----------
+sudo su -
+cd /opt
+apt update -y
+apt install docker.io
+usermod -aG docker $USER
