@@ -1,5 +1,6 @@
 ubuntu:
 ----------
+#!/bin/bash
 sudo su -
 cd /opt
 apt update -y
