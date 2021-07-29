@@ -1,0 +1,15 @@
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+sudo yum provides iperf
+
+sudo yum install iperf
+
+check multicast is running - $ifconfig ens5
+check multicast is running - $ip link show ens5 | grep MULTICAST
+
+enable multicast - $ifconfig eth0 multicast
+
+sudo ip link set dev eth0 multicast [on|off] 
+
+netstat -g
+ip maddr show
